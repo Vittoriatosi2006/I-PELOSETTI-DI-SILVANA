@@ -169,19 +169,43 @@ body {
   left: clamp(10px, 2vw, 20px);
   right: clamp(10px, 2vw, 20px);
   color: #2e2e2e;
-  max-width: 90%;
+  max-width: 70%;
 }
-
 .card-text h2 {
-  font-size: clamp(16px, 2.2vw, 28px);
+  font-size: clamp(12px, 2vw, 26px);
   line-height: 1.2;
   margin-bottom: clamp(6px, 1vw, 12px);
 }
 
 .card-text h3 {
-  font-size: clamp(11px, 1.4vw, 17px);
+  font-size: clamp(8px, 1.5vw, 15px);
   line-height: 1.4;
-  padding-right: 40px;
+}
+
+.adotta {
+  margin-top: clamp(8px, 1.5vw, 20px);
+  padding: clamp(4px, 1vw, 10px) clamp(10px, 2vw, 20px);
+  background-color: #ffd166;
+  color: #2e2e2e;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: clamp(10px, 1.2vw, 15px);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.dona-ora {
+  margin-top: clamp(8px, 1.5vw, 20px);
+  padding: clamp(4px, 1vw, 10px) clamp(10px, 2vw, 20px);
+  background-color: #5f9b89;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px; /* pill style */
+  font-weight: 600;
+  font-size: clamp(10px, 1.2vw, 15px);
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
 @media (max-width: 850px) {
@@ -205,6 +229,6 @@ body {
     max-width: 70%;
   }
   .card-text h3 {
-    padding-right: 60px;
+    padding-right: 50px;
   }
 }
