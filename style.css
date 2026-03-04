@@ -102,9 +102,15 @@ body {
 }
 
 .nav-links select {
-  width: 110px;
+  width: 130px;
+  max-width: 190px;
+  white-space: nowrap; /* impedisce di andare a capo */
+  overflow: hidden; /* nasconde il testo in eccesso */
+  text-overflow: ellipsis; /* aggiunge i ... */
+  appearance: none; /* rimuove stile di default */
+  cursor: pointer;
 }
-/* bottoni e select normali */
+
 .nav-links button,
 .nav-links select {
   background: none;
@@ -118,7 +124,6 @@ body {
   transition: all 0.2s ease;
 }
 
-/* hover: cambia solo colore */
 .nav-links button:hover,
 .nav-links select:hover {
   background-color: #2e2e2e;
@@ -133,8 +138,8 @@ body {
   font-weight: 600;
   margin-left: 20px;
 }
-/* Main */
 
+/* Main */
 .container-card {
   display: flex;
   gap: clamp(20px, 4vw, 40px);
