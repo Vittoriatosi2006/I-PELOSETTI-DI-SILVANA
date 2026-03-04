@@ -17,6 +17,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 .container-nav {
@@ -75,6 +76,7 @@ body {
   padding: 10px 30px;
   flex-wrap: nowrap;
   border-bottom: solid 1px rgb(223, 216, 216);
+  z-index: 999;
 }
 
 .icona-principale {
@@ -237,5 +239,185 @@ body {
 
   .card-text h3 {
     font-size: clamp(10px, 2.5vw, 16px);
+  }
+}
+
+/* ---------------------- */
+/* CONTENITORE CARDS CON SCROLL ORIZZONTALE */
+.tre-card {
+  display: flex;
+  gap: 24px; /* distanza tra le card */
+  padding: 30px clamp(20px, 5vw, 80px); /* stesso padding laterale delle card sopra */
+  overflow-x: auto; /* scroll laterale */
+  scroll-behavior: smooth; /* scorrimento fluido */
+  -webkit-overflow-scrolling: touch; /* mobile smooth */
+}
+
+/* Nascondere scrollbar (opzionale) */
+.tre-card::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge */
+}
+.tre-card {
+  -ms-overflow-style: none; /* IE 10+ */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* CARD */
+.tre-card > div {
+  flex: 0 0 320px; /* larghezza fissa, non si ridimensiona */
+  max-width: 320px;
+  min-height: 160px; /* minima */
+  background: white;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px clamp(20px, 5vw, 24px); /* padding interno con lato sinistro e destro coerente */
+  gap: 8px;
+  overflow: hidden;
+  word-wrap: break-word;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+/* ---------------------- */
+/* ICONE */
+.icona-affido,
+.icona-stallo,
+.icona-aiutaci {
+  width: 60px;
+  height: 60px;
+}
+
+/* ---------------------- */
+/* CONTENUTO CARD */
+.card-contenuto1,
+.card-contenuto2,
+.card-contenuto3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+/* ---------------------- */
+/* TITOLI CARD */
+.affido-titolo,
+.stallo-titolo,
+.aiutaci-titolo {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+/* ---------------------- */
+/* TESTI CARD */
+.affido-testo,
+.stallo-testo,
+.aiutaci-testo {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #2e2e2e;
+}
+
+.affido-testo strong,
+.stallo-testo strong,
+.aiutaci-testo strong {
+  font-weight: 700;
+}
+
+/* ---------------------- */
+/* BOTTONI CARD */
+.affido-bottone {
+  background-color: #d97a7a;
+}
+.stallo-bottone {
+  background-color: #f29ca3;
+}
+.aiutaci-bottone {
+  background-color: #5b8db8;
+}
+
+.affido-bottone,
+.stallo-bottone,
+.aiutaci-bottone {
+  font-family: Poppins, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 16px;
+  padding: 6px 12px;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.affido-bottone:hover {
+  background-color: #c56c70;
+}
+.stallo-bottone:hover {
+  background-color: #e18291;
+}
+.aiutaci-bottone:hover {
+  background-color: #4e7aa3;
+}
+
+/* ---------------------- */
+/* RESPONSIVE MEDIA QUERIES */
+@media (max-width: 1000px) {
+  .tre-card {
+    gap: 16px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tre-card > div {
+    flex: 0 0 280px; /* larghezza leggermente più piccola */
+    max-width: 280px;
+    min-height: 160px;
+    padding: 16px clamp(16px, 4vw, 20px); /* padding laterale coerente in mobile */
+  }
+
+  .icona-affido,
+  .icona-stallo,
+  .icona-aiutaci {
+    width: 50px;
+    height: 50px;
+  }
+
+  .affido-titolo,
+  .stallo-titolo,
+  .aiutaci-titolo {
+    font-size: 14px;
+  }
+
+  .affido-testo,
+  .stallo-testo,
+  .aiutaci-testo {
+    font-size: 11px;
+  }
+
+  .affido-bottone,
+  .stallo-bottone,
+  .aiutaci-bottone {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+}
+
+@media (max-width: 500px) {
+  .tre-card > div {
+    flex: 0 0 90%; /* quasi tutta la larghezza dello schermo */
+    max-width: 90%;
+    min-height: 160px;
   }
 }
